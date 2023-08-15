@@ -6,9 +6,15 @@ function App() {
   const [wordToGuess, setWordToGuess] = useState(() => {
     return words[Math.floor(Math.random()* words.length)]
   })
-
+  const [guessedLetters, setGuessedLetters] = useState<String[]>([])
   console.log(wordToGuess)
-  return <h1>hello world</h1>
+  return <div style={{
+    maxWidth: "800px",
+    display: "flex",
+    flexDirection: "column"
+  }}>
+
+  </div>
   
   
 }
