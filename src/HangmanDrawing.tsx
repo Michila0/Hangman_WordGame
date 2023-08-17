@@ -1,5 +1,10 @@
+const HEAD = (
+    
+    <div style={{width: "50px", height: "50px", borderRadius: "100px", border: "10px solid black", position: "absolute", top: "50px", right: "-30px"}}/> //create the circle
+)
 export function HangmanDrawing() {
     return <div style={{position: "relative"}}>
+        {HEAD}
         <div style={{ height: "50px", width: "10px", background: "black", position:"absolute",top: 0, right: 0}}/>
         
         <div style={{ height: "10px", width: "200px", background: "black", marginLeft: "120px"}}/>
