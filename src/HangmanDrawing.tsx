@@ -28,25 +28,27 @@ const LEFT_LEG = (
     
     <div style={{width: "100px", height: "10px", background: "black", position: "absolute", top: "210px", right: 0, rotate: "-60deg", transformOrigin: "right bottom"}}/> 
 )
+const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 
-export function HangmanDrawing() {
-    return <div style={{position: "relative"}}>
-        {/*set up the man */}
-        {HEAD}
-        {BODY}
-        {RIGHT_ARM}
-        {LEFT_ARM}
-        {RIGHT_LEG}
-        {LEFT_LEG}
+type HangmanDrawingProps = {
+    numberOfGuesses: number
+}
 
-        {/*create the black line*/}
-        <div style={{ height: "50px", width: "10px", background: "black", position:"absolute",top: 0, right: 0}}/>
-        
-        <div style={{ height: "10px", width: "200px", background: "black", marginLeft: "120px"}}/>
-        
-        <div style={{ height: "400px", width: "10px", background: "black", marginLeft: "120px"}}/>
+export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
+    return (
+        <div style={{position: "relative"}}>
+            {/*set up the man */}
+            {BODY_PARTS.slice(0, numberOfGuesses)}
 
-        <div style={{ height: "10px", width: "250px", background: "black"}}/>
+            {/*create the black line*/}
+            <div style={{ height: "50px", width: "10px", background: "black", position:"absolute",top: 0, right: 0}}/>
+            
+            <div style={{ height: "10px", width: "200px", background: "black", marginLeft: "120px"}}/>
+            
+            <div style={{ height: "400px", width: "10px", background: "black", marginLeft: "120px"}}/>
 
-    </div>
+            <div style={{ height: "10px", width: "250px", background: "black"}}/>
+
+        </div>
+    )
 }
